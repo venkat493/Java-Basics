@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class LeftShift {
+    public static void main(String[]args){
+         Scanner sc=new Scanner(System.in);
+         int n=sc.nextInt();
+         int h=sc.nextInt();    //According to the h value the element in the array shifted
+         int arr[]=new int[n];
+         for(int i=0;i<n;i++){
+              arr[i]=sc.nextInt();
+         }
+         method(h,n,arr);
+        }
+        static void method(int h ,int n,int arr[]){
+                int k=arr[0];
+                if(h==1){                 //h=1 this loop will run
+                for(int i=1;i<n;i++){
+                      arr[i-1]=arr[i];
+                }
+                arr[n-1]=k;
+            }
+            int k1=arr[0];
+            int k2=arr[1];
+            if(h==2){                  //h=2 this loop will run
+                for(int i=2;i<n;i++){
+                      arr[i-2]=arr[i];
+                }
+                arr[n-1]=k2;
+                arr[n-2]=k1;
+            }
+            int k3=arr[0];
+            int k4=arr[1];
+            int k5=arr[2];
+            if(h==3){               // h=3 this loop will run
+                 for(int i=3;i<n;i++){
+                      arr[i-3]=arr[i];
+                 }
+                 arr[n-3]=k3;
+                 arr[n-2]=k4;
+                 arr[n-1]=k5;
+            }
+             for(int i=0;i<n;i++){
+             System.out.print(arr[i]);
+               }
+       }
+}
+    
+
